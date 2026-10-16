@@ -1,0 +1,7 @@
+numpy>=1.24
+matplotlib>=3.7
+openai>=1.30
+rank-bm25>=0.2.2
+Pillow>=10.0
+httpx>=0.27
+# Optional: install .[control] for Acrobot/Pendulum, .[gym] for Box2D tasks.

@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Experiment outputs and large artifacts
+runs/
+results/
+*.zip
+data_clean/
+checkpoints/
+*.log
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*credentials*
+*cookie*
+.DS_Store

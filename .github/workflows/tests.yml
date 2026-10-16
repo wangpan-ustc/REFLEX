@@ -1,0 +1,23 @@
+name: tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install swig
+      - run: python -m pip install --upgrade pip setuptools wheel
+      - run: python -m pip install --no-build-isolation -e ".[dev,gym]" build
+      - run: ruff check .
+      - run: python -m pytest -q
+        env:
+          MPLBACKEND: Agg
+      - run: python -m build

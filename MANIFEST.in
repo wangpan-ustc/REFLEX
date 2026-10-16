@@ -1,0 +1,12 @@
+include LICENSE README.md SECURITY.md CONTRIBUTING.md CHANGELOG.md
+include requirements.txt
+recursive-include examples *.py
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include docs *.md
+recursive-include third_party *.py *.md LICENSE
+global-exclude *.py[cod]
+prune runs
+prune results
+prune build
+prune dist
